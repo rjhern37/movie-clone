@@ -1,7 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SearchBar from "./components/SearchBar"
 
 function App() {
+  const [state, setState] = usestate({
+    s: "",
+    results: [],
+  });
+
+  const API_KEY = process.env
+
+  const handleInput = (e) => {
+    let s = e.target.value;
+  }
   return (
     <div className="App">
       <header className="App-header">
