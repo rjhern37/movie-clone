@@ -1,17 +1,36 @@
 import React, {useState} from 'react';
-import SearchBar from "./components/SearchBar"
+import SearchBar from "./components/SearchBar";
+import Axios from "axios";
 
 function App() {
-  const [state, setState] = usestate({
+
+  const [state, setState] = useState({
     s: "",
     results: [],
+    selected: {},
   });
 
-  const API_KEY = process.env
+  const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=1f6e52bc";
+
+  const search = (e) => {
+    if (e.key === "Enter"){
+      Axios(API_URL + "&s=" + state.s).then(({data}) => {
+        console.log(data);
+      });
+
+    }
+  }
 
   const handleInput = (e) => {
     let s = e.target.value;
+
+   setState(prevState => {
+     return { ...prevState, s: s }
+   })
+
+    console.log(state.s);
   }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +39,7 @@ function App() {
        </h1>
       </header>
       <main>
-        <SearchBar />
+        <SearchBar handleInput={handleInput} search= {search}/>
       </main>
     </div>
   );
