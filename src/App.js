@@ -11,7 +11,7 @@ function App() {
     selected: {}
   });
 
-  const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=1f6e52bc";
+  const API_URL = process.env;
 
   const search = (e) => {
     if (e.key === "Enter"){
