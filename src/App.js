@@ -1,21 +1,28 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import SearchBar from "./components/SearchBar";
-import Axios from "axios";
+import Results from "./components/Results";
+import axios from "axios";
 
 function App() {
 
   const [state, setState] = useState({
     s: "",
     results: [],
-    selected: {},
+    selected: {}
   });
 
   const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=1f6e52bc";
 
   const search = (e) => {
     if (e.key === "Enter"){
-      Axios(API_URL + "&s=" + state.s).then(({data}) => {
+      axios(API_URL + "&s=" + state.s).then(({data}) => {
         console.log(data);
+        let results = data.Search;
+
+        setState(prevState => {
+          return { ...prevState, results: results }
+        })
+
       });
 
     }
@@ -33,13 +40,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
        <h1>
          Movie Database
        </h1>
       </header>
       <main>
-        <SearchBar handleInput={handleInput} search= {search}/>
+        <SearchBar handleInput={handleInput} search={search}/>
+        <Results results={state.results} />
       </main>
     </div>
   );
