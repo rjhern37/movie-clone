@@ -8,7 +8,7 @@ function results({ results }) {
         <section className="results">
             
             {results.map(result => (
-                <Result result={result} />
+                <Result result={result} key={result.imdbID} />
             ))}
 
         </section>

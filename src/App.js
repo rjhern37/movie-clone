@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import axios from "axios";
 import SearchBar from "./components/SearchBar";
 import Results from "./components/Results";
-import axios from "axios";
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     selected: {}
   });
 
-  const API_URL = process.env;
+  const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=1f6e52bc";
 
   const search = (e) => {
     if (e.key === "Enter"){
@@ -33,9 +33,9 @@ function App() {
 
    setState(prevState => {
      return { ...prevState, s: s }
-   })
+   });
 
-    console.log(state.s);
+    // console.log(state.s);
   }
 
   return (
