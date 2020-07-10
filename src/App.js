@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
+require('dotenv').config()
 import SearchBar from "./components/SearchBar";
 import Results from "./components/Results";
 
@@ -11,7 +12,7 @@ function App() {
     selected: {}
   });
 
-  const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=1f6e52bc";
+  const API_URL = process.env.API_URL;
 
   const search = (e) => {
     if (e.key === "Enter"){
