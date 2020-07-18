@@ -1,6 +1,6 @@
 import React from 'react'
 
-function popUp() {
+function PopUp() {
     return (
         <section className="popup">
             <div className="content">
@@ -17,4 +17,4 @@ function popUp() {
     )
 }
 
-export default popUp
+export default PopUp
