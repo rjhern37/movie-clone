@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from "axios";
-require('dotenv').config()
+import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import Results from "./components/Results";
+
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
     selected: {}
   });
 
-  const API_URL = process.env.API_URL;
+  const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=1f6e52bc";
 
   const search = (e) => {
     if (e.key === "Enter"){
@@ -42,13 +43,12 @@ function App() {
   return (
     <div className="App">
       <header>
-       <h1>
-         Movie Database
-       </h1>
       </header>
       <main>
+        <Navbar/>
         <SearchBar handleInput={handleInput} search={search}/>
         <Results results={state.results} />
+
       </main>
     </div>
   );

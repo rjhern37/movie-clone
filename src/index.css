@@ -34,6 +34,7 @@ section {
 display: block;
 width: 100%;
 padding: 15px;
+margin-top: 15px;
 
 border: none;
 outline: none;
@@ -94,9 +95,45 @@ transition: 0.4s ease-out;
 
 }
 
-.result .results:hover h3{
+.results .result:hover h3{
   background: #fff;
   color: black;
+}
+
+.results .result:hover h4{
+  background: #fff;
+  color: black;
+}
 
 
+.btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline;
+  position: relative;
+  background: #fcad26;
+  font-size: 12px;
+  font-weight: 300;
+	color: white;
+  /* text-transform: uppercase; */
+	letter-spacing: 2px;
+  padding: 5px 10px;
+  margin: 10px 10px 10px 50px; 
+	box-shadow: 0 6px #efa424;
+  border-radius: 20px;
+}
+
+.btn:hover {
+	box-shadow: 0 4px #efa424;
+	top: 2px;
+}
+
+.btn:active {
+	box-shadow: 0 0 #efa424;
+	top: 6px;
+}
+
+.mBtn {
+  padding-left: 100px;
 }
