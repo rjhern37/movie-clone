@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from "../components/Navbar"
+import Tavbar from "../components/Navbar"
 
 function Movieprofile() {
     return (
         <div>
               <section>
-            <Navbar />
+            <Tavbar />
             </section>
             <section>
                 

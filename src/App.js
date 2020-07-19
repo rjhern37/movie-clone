@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-import Navbar from "./components/Navbar";
+import Tavbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import Results from "./components/Results";
 
@@ -45,7 +45,7 @@ function App() {
       <header>
       </header>
       <main>
-        <Navbar/>
+        <Tavbar/>
         <SearchBar handleInput={handleInput} search={search}/>
         <Results results={state.results} />
 
